@@ -1,16 +1,17 @@
 # Deploy a 3-tier Microservice Voting App using ArgoCD and Azure DevOps Pipeline
 
 The Docker Example Voting App is a **microservices application** implemented using **Python** and **Node.js**. All components run in separate Docker containers to ensure scalability and isolation. The application consists of the following components:
-	1. **Voting Frontend (Python / Flask)**: The voting page where users choose and submit their vote.
-	2. **Vote processor Backend (Node.js / Express)**: Handling incoming vote request by receiving votes from the frontend and processing the request, then forwards the vote for temporary storage.
+1. **Voting Frontend (Python / Flask)**: The voting page where users choose and submit their vote.
 	
-	3. **Redis Database**: Stores votes temporarily for fast access.
+2. **Vote processor Backend (Node.js / Express)**: Handling incoming vote request by receiving votes from the frontend and processing the request, then forwards the vote for temporary storage.
+   
+3. **Redis Database**: Stores votes temporarily for fast access.
 	
-	4. **Worker (Python)**: Processes votes from Redis and sends the final count to the main database (PostgreSQL).
+4. **Worker (Python)**: Processes votes from Redis and sends the final count to the main database (PostgreSQL).
 	
-	5. **PostgreSQL Database**: It is a permanent storage where stores the final voting results.
+5. **PostgreSQL Database**: It is a permanent storage where stores the final voting results.
 	
-	6. **Results Frontend (Python / Flask)**: The results page displays real-time voting results.
+6. **Results Frontend (Python / Flask)**: The results page displays real-time voting results.
 
 ## **Stage One: Continuous Integration (CI)**
 •	Step 1: Clone and Deploy the App Locally Using Docker-Compose
