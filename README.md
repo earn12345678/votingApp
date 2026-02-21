@@ -222,9 +222,9 @@ docker ps
 
 If it is port 5000, run ```bash curl http://localhost:5000 ``` to view the app in the terminal.
 
-**f. Copy the VM public address and type into the browser http://vm-public-ip>:5000 to view the App.**
+**f. Copy the VM public address and type into the browser ```bash http://vm-public-ip>:5000 ``` to view the App.**
 
-<img width="850" height="120" alt="image" src="https://github.com/user-attachments/assets/a53ade23-6ca8-41c7-b405-43f106f7c5b5" />
+<img width="850" height="400" alt="image" src="https://github.com/user-attachments/assets/a53ade23-6ca8-41c7-b405-43f106f7c5b5" />
 
 
 ### **Step 2: **
