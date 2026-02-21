@@ -144,7 +144,7 @@ ssh -i ~/.ssh/id_rsa azureuser@<PUBLIC-IP>
 
 If asked “Are you sure you want to continue connecting?”, type “yes”. You are now inside the Azure Ubuntu VM.
 
-**b. Update the VM: run the following command
+**b. Update the VM: run the following command**
 
 ```bash
 sudo apt-get update
@@ -153,6 +153,78 @@ sudo apt-get update
 **c. Install Docker and Docker-Compose**: To test the app locally on the VM, we need to install Docker on the machine to run the ```bash docker-compose up -d ``` command. 
 
 Docker Compose is used to define and manage multi-container applications, including microservices.
+
+```bash
+#### 1. Install required packages
+sudo apt-get install \
+  ca-certificates \
+  curl \
+  gnupg \
+  lsb-release
+
+#### 2. Add Docker Official GPG Key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+#### 3. Set Up the Stable Repository
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+#### 4. Install Docker Engine
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+
+#### 5. Install Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")')/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+#### 6. Manage Docker as a Non-Root User and refresh it
+sudo usermod -aG docker $USER
+newgrp docker
+
+#### 7. Check versions
+sudo docker --version
+docker-compose --version
+
+#### 8. Check you can docker command without sudo
+docker ps
+```
+
+**d. Clone the Repo:**
+
+Clone or fork the App > ```bash cd ``` into the repository > run the ```bash docker-compose up -d ``` command
+
+```bash
+git clone <https://github.com/xxxxx/<example-voting-app>.git>
+```
+
+```bash
+ls
+```
+
+```bash
+cd <example-voting-app>
+```
+
+Run the command to start all docker containers simultaneously
+
+```bash
+docker-compose up -d
+```
+
+The output shows that all containers are running
+
+```bash
+docker ps
+```
+
+**e. From the output, we can see the port number mapped to the app container**
+
+If it is port 5000, run ```bash curl http://localhost:5000 ``` to view the app in the terminal.
+
+**f. Copy the VM public address and type into the browser http://vm-public-ip>:5000 to view the App.**
+
+<img width="850" height="120" alt="image" src="https://github.com/user-attachments/assets/a53ade23-6ca8-41c7-b405-43f106f7c5b5" />
 
 
 ### **Step 2: **
