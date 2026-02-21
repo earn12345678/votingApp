@@ -96,7 +96,7 @@ Check if SSH key exists:
 ls ~/.ssh
 ```
 
-<img width="483" height="31" alt="image" src="https://github.com/user-attachments/assets/00d27917-13df-4637-b60a-45c01ef20580" />
+<img width="650" height="55" alt="image" src="https://github.com/user-attachments/assets/00d27917-13df-4637-b60a-45c01ef20580" />
 
 If **id_rsa** does not exist, create one:
 
