@@ -14,19 +14,31 @@ The Docker Example Voting App is a **microservices application** implemented usi
 6. **Results Frontend (Python / Flask)**: The results page displays real-time voting results.
 
 ## **Stage One: Continuous Integration (CI)**
+
 •	Step 1: Clone and Deploy the App Locally Using Docker-Compose
+
 •	Step 2: Create an Azure DevOps Project and Import the Repo
+
 •	Step 3: Create an Azure Container Registry
+
 •	Step 4: Set Up Self-Hosted Agent for the Pipeline
+
 •	Step 5: Write a CI Pipeline Script for Each Microservice using separate build and push stages
 
 ## **Stage Two: Continuous Delivery (CD)**
+
 •	Step 1: Create an Azure Managed Kubernetes Cluster (AKS)
+
 •	Step 2: Install Azure CLI and Set Up AKS for Use
+
 •	Step 3: Install ArgoCD
+
 •	Step 4: Configure ArgoCD
+
 •	Step 5: Write a Bash Script that updates the pipeline image on K8s manifest
+
 •	Step 6: Create an ACR ImagePullSecret on AKS
+
 •	Step 7: Verify the CI/CD process
 
 ---
