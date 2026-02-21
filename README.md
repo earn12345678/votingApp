@@ -106,6 +106,8 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa
 
 Create **Ubuntu Linux VM**
 
+This command creates **Ubuntu VM**, adds your **SSH key** automatically, and opens **port 22 (SSH)** by default.
+
 ```bash
 az vm create \
   --resource-group $RESOURCE_GROUP \
@@ -116,6 +118,41 @@ az vm create \
   --size Standard_B2s \
   --public-ip-sku Standard
 ```
+
+**Get the Public IP Address by:**
+
+```bash
+az vm list-ip-addresses \
+  --resource-group $RESOURCE_GROUP \
+  --name $VM_NAME \
+  --output table
+```
+
+**You’ll see something like:**
+
+```bash
+VirtualMachine    PublicIP
+---------------   ------------
+devops-vm         20.xxx.xxx.xxx
+```
+
+**SSH into the VM:**
+
+```bash
+ssh -i ~/.ssh/id_rsa azureuser@<PUBLIC-IP>
+```
+
+If asked “Are you sure you want to continue connecting?”, type “yes”. You are now inside the Azure Ubuntu VM.
+
+**b. Update the VM: run the following command
+
+```bash
+sudo apt-get update
+```
+
+**c. Install Docker and Docker-Compose**: To test the app locally on the VM, we need to install Docker on the machine to run the ```bash docker-compose up -d ``` command. 
+
+Docker Compose is used to define and manage multi-container applications, including microservices.
 
 
 ### **Step 2: **
