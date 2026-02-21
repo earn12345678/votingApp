@@ -49,7 +49,9 @@ The Docker Example Voting App is a **microservices application** implemented usi
 
 ### **Step 1: Clone and Deploy the app locally using docker-compose**
 
-Create a VM to test our app locally (Make sure you have Docker Desktop and Git installed on your computer)
+Create a VM to test our app locally 
+
+(Make sure you have Docker Desktop and Git installed on your computer)
 
 **a. Create an Azure Linux Ubuntu VM and Login:**
 
@@ -65,14 +67,46 @@ brew install azure-cli
 az login
 ```
 
-#### Step 2: Azure DevOps Project Setup
+A browser will open → sign in to **Microsoft Azure** → return to terminal. 
+
+(If you do not have an Azure account, please create one first)
+
+1. **Set Variables**:
+
+```bash
+RESOURCE_GROUP=devops-rg
+VM_NAME=devops-vm
+LOCATION=southeastasia
+USERNAME=azureuser
+```
+
+2. **Create a Resource Group**
+
+```bash
+az group create \
+  --name $RESOURCE_GROUP \
+  --location $LOCATION
+```
+
+3. **Create an SSH Key**
+
+Check if SSH key exists:
+
+```bash
+ls ~/.ssh
+```
+
+<img width="273" height="18" alt="image" src="https://github.com/user-attachments/assets/ae13e23d-f7cf-4bd1-89e8-5d5ee2e0ee11" />
+
+
+### **Step 2: Azure DevOps Project Setup**
 
 1. Navigate to [https://dev.azure.com](https://dev.azure.com) and sign in
 2. Create a new project named `votingApp` (set visibility to **Private**)
 3. Go to **Repos → Files → Import Repository**
 4. Paste your Git clone URL and click **Import**
 
-#### Step 3: Azure Container Registry (ACR)
+### **Step 3: Azure Container Registry (ACR)**
 
 ```bash
 # Set variables (use same resource group as your VM)
