@@ -19,7 +19,7 @@ The Docker Example Voting App is a **microservices application** implemented usi
 
 •	Step 1: Clone and Deploy the App Locally Using Docker-Compose
 
-•	Step 2: Create an Azure DevOps Project and Import the Repo
+•	Step 2: Create an Azure DevOps Project and Import the Repository
 
 •	Step 3: Create an Azure Container Registry
 
@@ -150,7 +150,7 @@ If asked “Are you sure you want to continue connecting?”, type “yes”. Yo
 sudo apt-get update
 ```
 
-**c. Install Docker and Docker-Compose**: To test the app locally on the VM, we need to install Docker on the machine to run the ```bash docker-compose up -d ``` command. 
+**c. Install Docker and Docker-Compose**: To test the app locally on the VM, we need to install Docker on the machine to run the ``` docker-compose up -d ``` command. 
 
 Docker Compose is used to define and manage multi-container applications, including microservices.
 
@@ -192,7 +192,7 @@ docker ps
 
 **d. Clone the Repo:**
 
-Clone or fork the App > ```bash cd ``` into the repository > run the ``` docker-compose up -d ``` command
+Clone or fork the App > ``` cd ``` into the repository > run the ``` docker-compose up -d ``` command
 
 ```bash
 git clone <https://github.com/xxxxx/<example-voting-app>.git>
@@ -227,12 +227,17 @@ If it is port 5000, run ``` curl http://localhost:5000 ``` to view the app in th
 <img width="850" height="400" alt="image" src="https://github.com/user-attachments/assets/a53ade23-6ca8-41c7-b405-43f106f7c5b5" />
 
 
-### **Step 2: **
+### **Step 2: Create an Azure DevOps Project and Import the repository **
 
-1. Navigate to [https://dev.azure.com](https://dev.azure.com) and sign in
-2. Create a new project named `votingApp` (set visibility to **Private**)
-3. Go to **Repos → Files → Import Repository**
-4. Paste your Git clone URL and click **Import**
+a. Access **Azure DevOps** by navigating to **https://dev.azure.com** and signing in. If this is your first time, you may need to sign up and create an organization. You may choose any organization name.
+
+b. **Create a new project** named ``` votingApp ``` > set the visibility to **Private** > click **Create Project**
+
+c. **Import the Git Repo to Azure Repo**: Repos > Files > In Repository type leave it as **Git** > Paste your **Git clone URL** > Click **Import**
+
+Then, it will show the entire repository.
+<img width="1250" height="800" alt="image" src="https://github.com/user-attachments/assets/4bf7c63c-d252-4dce-809e-1e3e73185740" />
+
 
 ### **Step 3: Azure Container Registry (ACR)**
 
