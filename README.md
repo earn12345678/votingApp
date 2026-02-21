@@ -1,14 +1,18 @@
 # Deploy a 3-tier Microservice Voting App using ArgoCD and Azure DevOps Pipeline
 
 The Docker Example Voting App is a **microservices application** implemented using **Python** and **Node.js**. All components run in separate Docker containers to ensure scalability and isolation. The application consists of the following components:
-  1. **Voting Frontend (Python / Flask)**: The voting page where users choose and submit their vote.
-	2. **Vote processor Backend (Node.js / Express)**: Handling incoming vote request by receiving votes from the frontend and processing the request, then forwards the vote for temporary storage.
-	3. **Redis Database**: Stores votes temporarily for fast access.
-	4. **Worker (Python)**: Processes votes from Redis and sends the final count to the main database (PostgreSQL).
-	5. **PostgreSQL Database**: It is a permanent storage where stores the final voting results.
-	6. **Results Frontend (Python / Flask)**: The results page displays real-time voting results.
 
-```
+	1. **Voting Frontend (Python / Flask)**: The voting page where users choose and submit their vote.
+	
+	2. **Vote processor Backend (Node.js / Express)**: Handling incoming vote request by receiving votes from the frontend and processing the request, then forwards the vote for temporary storage.
+	
+	3. **Redis Database**: Stores votes temporarily for fast access.
+	
+	4. **Worker (Python)**: Processes votes from Redis and sends the final count to the main database (PostgreSQL).
+	
+	5. **PostgreSQL Database**: It is a permanent storage where stores the final voting results.
+	
+	6. **Results Frontend (Python / Flask)**: The results page displays real-time voting results.
 
 ## **Stage One: Continuous Integration (CI)**
 •	Step 1: Clone and Deploy the App Locally Using Docker-Compose
@@ -17,7 +21,6 @@ The Docker Example Voting App is a **microservices application** implemented usi
 •	Step 4: Set Up Self-Hosted Agent for the Pipeline
 •	Step 5: Write a CI Pipeline Script for Each Microservice using separate build and push stages
 
-```
 ## **Stage Two: Continuous Delivery (CD)**
 •	Step 1: Create an Azure Managed Kubernetes Cluster (AKS)
 •	Step 2: Install Azure CLI and Set Up AKS for Use
@@ -26,43 +29,6 @@ The Docker Example Voting App is a **microservices application** implemented usi
 •	Step 5: Write a Bash Script that updates the pipeline image on K8s manifest
 •	Step 6: Create an ACR ImagePullSecret on AKS
 •	Step 7: Verify the CI/CD process
-
----
-
-## 🔁 Pipeline Stages
-
-### Stage 1 — Continuous Integration (CI)
-
-| Step | Description |
-|---|---|
-| 1 | Clone and deploy the app locally via Docker Compose |
-| 2 | Create an Azure DevOps project and import the repository |
-| 3 | Provision an Azure Container Registry (ACR) |
-| 4 | Configure a self-hosted Azure DevOps agent |
-| 5 | Write CI pipeline scripts (build & push) for each microservice |
-
-### Stage 2 — Continuous Delivery (CD)
-
-| Step | Description |
-|---|---|
-| 1 | Provision an Azure Managed Kubernetes Cluster (AKS) |
-| 2 | Install Azure CLI and connect to AKS |
-| 3 | Install ArgoCD on the cluster |
-| 4 | Configure ArgoCD to sync with the Azure repository |
-| 5 | Write a Bash script to update Kubernetes manifests on new image push |
-| 6 | Create an ACR `imagePullSecret` on AKS |
-| 7 | Verify the full CI/CD process end-to-end |
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Azure account with active subscription
-- Azure CLI installed
-- Docker Desktop & Git installed
-- kubectl installed
 
 ---
 
