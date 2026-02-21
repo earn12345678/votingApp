@@ -192,7 +192,7 @@ docker ps
 
 **d. Clone the Repo:**
 
-Clone or fork the App > ```bash cd ``` into the repository > run the ```bash docker-compose up -d ``` command
+Clone or fork the App > ```bash cd ``` into the repository > run the ``` docker-compose up -d ``` command
 
 ```bash
 git clone <https://github.com/xxxxx/<example-voting-app>.git>
@@ -220,9 +220,9 @@ docker ps
 
 **e. From the output, we can see the port number mapped to the app container**
 
-If it is port 5000, run ```bash curl http://localhost:5000 ``` to view the app in the terminal.
+If it is port 5000, run ``` curl http://localhost:5000 ``` to view the app in the terminal.
 
-**f. Copy the VM public address and type into the browser ```bash http://vm-public-ip>:5000 ``` to view the App.**
+**f. Copy the VM public address and type into the browser ``` http://vm-public-ip>:5000 ``` to view the App.**
 
 <img width="850" height="400" alt="image" src="https://github.com/user-attachments/assets/a53ade23-6ca8-41c7-b405-43f106f7c5b5" />
 
