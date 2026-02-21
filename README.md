@@ -96,10 +96,29 @@ Check if SSH key exists:
 ls ~/.ssh
 ```
 
-<img width="273" height="18" alt="image" src="https://github.com/user-attachments/assets/ae13e23d-f7cf-4bd1-89e8-5d5ee2e0ee11" />
+<img width="483" height="31" alt="image" src="https://github.com/user-attachments/assets/00d27917-13df-4637-b60a-45c01ef20580" />
+
+If **id_rsa** does not exist, create one:
+
+```bash
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa
+```
+
+Create **Ubuntu Linux VM**
+
+```bash
+az vm create \
+  --resource-group $RESOURCE_GROUP \
+  --name $VM_NAME \
+  --image Ubuntu2204 \
+  --admin-username $USERNAME \
+  --ssh-key-values ~/.ssh/id_rsa.pub \
+  --size Standard_B2s \
+  --public-ip-sku Standard
+```
 
 
-### **Step 2: Azure DevOps Project Setup**
+### **Step 2: **
 
 1. Navigate to [https://dev.azure.com](https://dev.azure.com) and sign in
 2. Create a new project named `votingApp` (set visibility to **Private**)
