@@ -13,6 +13,8 @@ The Docker Example Voting App is a **microservices application** implemented usi
 	
 6. **Results Frontend (Python / Flask)**: The results page displays real-time voting results.
 
+---
+
 ## **Stage One: Continuous Integration (CI)**
 
 •	Step 1: Clone and Deploy the App Locally Using Docker-Compose
@@ -43,9 +45,9 @@ The Docker Example Voting App is a **microservices application** implemented usi
 
 ---
 
-### Stage 1 — CI Setup
+## **Stage One: Continuous Integration (CI)**
 
-#### Step 1: Local Deployment with Docker Compose
+### **Step 1: Local Deployment with Docker Compose**
 
 ```bash
 # Provision an Azure Ubuntu Linux VM
