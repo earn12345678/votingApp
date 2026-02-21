@@ -1,6 +1,6 @@
-# 🗳️ Microservice Voting App — CI/CD with Azure DevOps & ArgoCD
+# Deploy a 3-tier Microservice Voting App using ArgoCD and Azure DevOps Pipeline
 
-> A fully automated CI/CD pipeline deploying a 3-tier microservice voting application on Azure Kubernetes Service (AKS) using Azure DevOps Pipelines and ArgoCD for GitOps-based continuous delivery.
+The Docker Example Voting App is a microservices application implemented using Python and Node.js. All components run in separate Docker containers to ensure scalability and isolation. The application consists of the following components:
 
 ---
 
