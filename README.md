@@ -47,31 +47,22 @@ The Docker Example Voting App is a **microservices application** implemented usi
 
 ## **Stage One: Continuous Integration (CI)**
 
-### **Step 1: Local Deployment with Docker Compose**
+### **Step 1: Clone and Deploy the app locally using docker-compose**
+
+Create a VM to test our app locally (Make sure you have Docker Desktop and Git installed on your computer)
+
+**a. Create an Azure Linux Ubuntu VM and Login:**
 
 ```bash
-# Provision an Azure Ubuntu Linux VM
-az vm create ...
+# Make sure you have
+az version
+ssh -V
 
-# SSH into the VM
-ssh -i ~/.ssh/id_rsa azureuser@<vm-public-ip>
+# If Azure CLI is not stalled (Mac):
+brew install azure-cli
 
-# Update the system
-sudo apt-get update
-
-# Install Docker and Docker Compose
-# (Follow Docker's official installation guide for Ubuntu)
-
-# Clone the repository
-git clone <your-repo-url>
-cd <repo-folder>
-
-# Start all services
-docker-compose up -d
-
-# Verify locally
-curl http://localhost:5000
-# Or open in browser: http://<vm-public-ip>:5000
+# Login to Azure
+az login
 ```
 
 #### Step 2: Azure DevOps Project Setup
